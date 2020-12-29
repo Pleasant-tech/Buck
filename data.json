@@ -1,0 +1,2 @@
+
+{"name": "django", "executor": "frontend", "buck_list": ["cd /storage/emulated/0/Project/", " mkdir $","cd $","mkdir js","cd js","touch index.js","cd ..","mkdir css","cd css","touch style.css","cd ..","touch index.html"], "description": "", "count": 0}, 

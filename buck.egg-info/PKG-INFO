@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: buck
+Version: 0.0.1
+Summary:  Get started with your projects faster
+Home-page: UNKNOWN
+Author: Pleasant Tech
+Author-email: dummyware2020@gmail.com
+License: UNKNOWN
+Description: Store buckets of cli commands and run them with a custom keyword of your choice.
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
