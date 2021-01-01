@@ -20,10 +20,12 @@ setup (
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
   ],
-  entry_points ='''
-    [console_scripts]
-    buck = buck.__main__:main
-  ''',
+  entry_points = {
+    "console_scripts": [
+     " buck = buck.__main__:main",
+    ]
+  },
+  include_package_data=True,
   author = 'Pleasant Tech',
   author_email = 'dummyware2020@gmail.com'
   
