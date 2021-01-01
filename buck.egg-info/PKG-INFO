@@ -2,10 +2,19 @@ Metadata-Version: 2.1
 Name: buck
 Version: 0.0.1
 Summary:  Get started with your projects faster
-Home-page: UNKNOWN
+Home-page: https://github.com/Pleasant-tech/Buck/
 Author: Pleasant Tech
 Author-email: dummyware2020@gmail.com
-License: UNKNOWN
+License: MIT
 Description: Store buckets of cli commands and run them with a custom keyword of your choice.
+        
+        Installation - Pip install buck 🗑️
+        
+        Support my YouTube channel 
+        👇
+        youtube.com/c/Pleasanttech
 Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
 Description-Content-Type: text/markdown
