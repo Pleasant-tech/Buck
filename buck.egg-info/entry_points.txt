@@ -1,4 +1,0 @@
-
-    [console_scripts]
-    buck = buck.__main__:main
-  

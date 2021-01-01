@@ -1,7 +1,0 @@
-README.md
-setup.py
-buck.egg-info/PKG-INFO
-buck.egg-info/SOURCES.txt
-buck.egg-info/dependency_links.txt
-buck.egg-info/entry_points.txt
-buck.egg-info/top_level.txt
