@@ -7,7 +7,7 @@ with open("README.md","r") as f:
 
 setup (
   name = 'buck',
-  version = '0.0.1',
+  version = '1.0',
   description = ' Get started with your projects faster .',
   long_description = README,
   long_description_content_type="text/markdown",
@@ -25,7 +25,6 @@ setup (
      " buck = buck.__main__:main",
     ]
   },
-  include_package_data=True,
   author = 'Pleasant Tech',
   author_email = 'dummyware2020@gmail.com'
   
