@@ -1,5 +1,4 @@
 from setuptools import setup,find_packages
-
 with open("README.md","r") as f:
   README = f.read()
   f.close()
@@ -7,12 +6,17 @@ with open("README.md","r") as f:
 
 setup (
   name = 'buck',
-  version = '1.0',
+  version = '0.0.4',
   description = ' Get started with your projects faster .',
   long_description = README,
   long_description_content_type="text/markdown",
   url = 'https://github.com/Pleasant-tech/Buck/',
-  packages = find_packages(),
+  packages= find_packages("src"),
+  package_dir={"": "src"},
+  package_data={
+   # If any package contains *.txt or *.json files, include them:
+    "": ["*.txt", "*.json"],
+  },
   include_package_data = True,
   license="MIT",
   classifiers =[
@@ -22,7 +26,7 @@ setup (
   ],
   entry_points = {
     "console_scripts": [
-     " buck = buck.__main__:main",
+     " buck = src.__main__:main",
     ]
   },
   author = 'Pleasant Tech',

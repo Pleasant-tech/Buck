@@ -61,8 +61,11 @@ def createBucket():
 #List out buckets
 def listBucket():
   
+  file = os.getcwd()
+  d = file + '/data.json'
+  open (d,"w+")
   #Read data 
-  with open('data.json', 'r') as f:
+  with open(d, 'r') as f:
     data = f.read()
     f.close()
     
@@ -97,7 +100,7 @@ def run(arg):
   
   # Fetch Data
  
-  with open("data.json", 'r') as f:
+  with open("ata.json", 'r') as f:
     preData = f.read()
     f.close()
     

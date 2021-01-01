@@ -1,4 +1,0 @@
-
-{"name": "django", "executor": "d", "buck_list": ["cd buck", "mkdir $", " cd $", " django-admin startproject $", " cd $", " python manage.py startapp Api", " python manage.py makemigrations", " python manage.py migrate", " python manage.py runserver"], "description": "", "count": 0}, 
-
-{"name": "python ", "executor": "py ", "buck_list": ["cd /storage/emulated/0", " mkdir BasicPy ", " cd BasicPy", " touch main.py"], "description": "It makes a new basic python directory", "count": 0}, 
