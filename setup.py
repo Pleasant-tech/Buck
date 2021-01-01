@@ -8,7 +8,7 @@ with open("README.md","r") as f:
 setup (
   name = 'buck',
   version = '0.0.1',
-  description = ' Get started with your projects faster',
+  description = ' Get started with your projects faster .',
   long_description = README,
   long_description_content_type="text/markdown",
   url = 'https://github.com/Pleasant-tech/Buck/',
@@ -22,7 +22,7 @@ setup (
   ],
   entry_points ='''
     [console_scripts]
-    buck = buck.src.__main__:main
+    buck = buck.__main__:main
   ''',
   author = 'Pleasant Tech',
   author_email = 'dummyware2020@gmail.com'
