@@ -6,13 +6,12 @@ with open("README.md","r") as f:
 
 setup (
   name = 'buck',
-  version = '0.0.4',
+  version = '0.1.0',
   description = ' Get started with your projects faster .',
   long_description = README,
   long_description_content_type="text/markdown",
   url = 'https://github.com/Pleasant-tech/Buck/',
-  packages= find_packages("src"),
-  package_dir={"": "src"},
+  packages= find_packages(),
   package_data={
    # If any package contains *.txt or *.json files, include them:
     "": ["*.txt", "*.json"],
@@ -26,9 +25,10 @@ setup (
   ],
   entry_points = {
     "console_scripts": [
-     " buck = src.__main__:main",
+     " buck = buck.__main__:main",
     ]
   },
+  zip_safe=False,
   author = 'Pleasant Tech',
   author_email = 'dummyware2020@gmail.com'
   

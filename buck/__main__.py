@@ -1,4 +1,6 @@
-import sys,json,os
+import sys
+import json 
+import os
 import shlex
 
 # Creates the Bucket class 
@@ -61,14 +63,13 @@ def createBucket():
 #List out buckets
 def listBucket():
   
-  file = os.getcwd()
-  d = file + '/data.json'
-  open (d,"w+")
+   # Write Json to a Json Data File
+ 
   #Read data 
-  with open(d, 'r') as f:
+  with open('data.json', 'r') as f:
     data = f.read()
     f.close()
-    
+  
   # Modifies Data 
   otherData = '{ "bucket" : [' + data + '{} ] } '
     
@@ -78,6 +79,7 @@ def listBucket():
   # Prints Data To user
   print (' >> Here you go : \n')
   print(json.dumps(jsonData,indent=2))
+ 
   
 # Check if command is cd
 def is_cd(command: str) -> bool:
@@ -100,7 +102,7 @@ def run(arg):
   
   # Fetch Data
  
-  with open("ata.json", 'r') as f:
+  with open('data.json', 'r') as f:
     preData = f.read()
     f.close()
     
@@ -128,7 +130,6 @@ def run(arg):
       
       if len(arg) > 2 :
         for i in buck:
-          
           #  print (cmd)
           if '$' in i:
             
@@ -168,15 +169,19 @@ def run(arg):
     
 # Main Function
 
+  
+  
+
 def main(arg=sys.argv):
   args = ['--create','-c','--list','-l']
   if len(arg) == 1:
     print ('>> Please pass an argument in')
+    
   elif arg[1] == '--create' or arg[1] == '-c':
     createBucket()
   elif arg[1] == '--list' or arg[1]=='-l':
     listBucket()
-
+ 
   elif arg[1] not in args:
     run(arg)
  
