@@ -84,7 +84,7 @@ def listBucket():
 # Check if command is cd
 def is_cd(command: str) -> bool:
   command_split = shlex.split(command)
-  return command_split[0] == "cd" 
+  #return command_split[0] == "cd" 
   # this returns True if command is cd or False if not
   
   
@@ -164,8 +164,8 @@ def run(arg):
           print('>> Done! executed '+ str(len(buck)) + ' commands.')
         
     
-  if arg[1] not in response:
-    print('No bucket ' + arg[1])
+   # if arg[1] not in response:
+     # print('No bucket ' + arg[1])
     
 # Main Function
 
