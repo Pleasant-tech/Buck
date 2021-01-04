@@ -3,6 +3,7 @@ import json
 import os
 import shlex
 
+
 # Creates the Bucket class 
 class Bucket: 
   def __init__(self,name,executor,commandList,description):
@@ -15,8 +16,6 @@ class Bucket:
   #Increments the count property 
   def increment(self):
     self.count += 1
-
-
 # Creates a New Bucket
 def createBucket():
   print(' >> Howdy! Create A New Bucket ')
@@ -61,11 +60,13 @@ def createBucket():
   sys.exit()
     
 #List out buckets
+
 def listBucket():
   
    # Write Json to a Json Data File
  
   #Read data 
+  
   with open('data.json', 'r') as f:
     data = f.read()
     f.close()
@@ -79,8 +80,8 @@ def listBucket():
   # Prints Data To user
   print (' >> Here you go : \n')
   print(json.dumps(jsonData,indent=2))
- 
   
+
 # Check if command is cd
 def is_cd(command: str) -> bool:
   command_split = shlex.split(command)
@@ -170,17 +171,19 @@ def run(arg):
 # Main Function
 
   
-  
-
 def main(arg=sys.argv):
+  
   args = ['--create','-c','--list','-l']
   if len(arg) == 1:
     print ('>> Please pass an argument in')
-    
   elif arg[1] == '--create' or arg[1] == '-c':
     createBucket()
+    
   elif arg[1] == '--list' or arg[1]=='-l':
+    
     listBucket()
+  
+    
  
   elif arg[1] not in args:
     run(arg)
