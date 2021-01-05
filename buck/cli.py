@@ -3,6 +3,7 @@ import json
 import os
 import shlex
 
+import importlib.resources
 
 # Creates the Bucket class 
 class Bucket: 
@@ -18,6 +19,8 @@ class Bucket:
     self.count += 1
 # Creates a New Bucket
 def createBucket():
+  
+    
   print(' >> Howdy! Create A New Bucket ')
   
   # Accept inputs from User
@@ -44,10 +47,10 @@ def createBucket():
   
    # Coverts object to Json 
   final = json.dumps(newData)
-  
-   # Write Json to a Json Data File
-  
-  with open('data.json','a') as f:
+  with importlib.resources.path("buck","data.json") as haar_resource:
+    file = os.path.abspath(haar_resource)
+   # Write Json to a Json Data Fi
+  with open(file,"a") as f: 
     other= '\n'+final+', \n'
     f.write(other)
     f.close()
@@ -65,11 +68,10 @@ def listBucket():
   
    # Write Json to a Json Data File
  
-  #Read data 
   
-  with open('data.json', 'r') as f:
-    data = f.read()
-    f.close()
+  data = importlib.resources.read_text("buck", "data.json")
+    
+   # data =json.load(data_file)
   
   # Modifies Data 
   otherData = '{ "bucket" : [' + data + '{} ] } '
@@ -103,9 +105,8 @@ def run(arg):
   
   # Fetch Data
  
-  with open('data.json', 'r') as f:
-    preData = f.read()
-    f.close()
+  preData = importlib.resources.read_text("buck", "data.json")
+    
     
   
   

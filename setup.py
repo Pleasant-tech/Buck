@@ -3,11 +3,11 @@ with open("README.md","r") as f:
   README = f.read()
   f.close()
 
-
 setup (
   name = 'buck',
-  version = '0.2.7',
+  version = '0.3.2',
   description = ' Get started with your projects faster .',
+  
   long_description = README,
   long_description_content_type="text/markdown",
   url = 'https://github.com/Pleasant-tech/Buck/',
