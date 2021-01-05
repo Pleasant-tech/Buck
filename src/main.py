@@ -24,8 +24,11 @@ def createBucket():
   print(' >> Howdy! Create A New Bucket ')
   
   # Accept inputs from User
-  name = input("\n Name : ")
-  preCmds = (input ("\n Command's : "))
+  name = input("\n Name :")
+  
+  print (' \n >>seperate commands with a comma')
+  preCmds = input (" Commands : ")
+  
   cmds = preCmds.split(',')
   executor = str(input("\n Executor: ")) 
 
@@ -47,7 +50,7 @@ def createBucket():
   
    # Coverts object to Json 
   final = json.dumps(newData)
-  with importlib.resources.path("buck","data.json") as haar_resource:
+  with importlib.resources.path("src","data.json") as haar_resource:
     file = os.path.abspath(haar_resource)
    # Write Json to a Json Data Fi
   with open(file,"a") as f: 
@@ -69,7 +72,7 @@ def listBucket():
    # Write Json to a Json Data File
  
   
-  data = importlib.resources.read_text("buck", "data.json")
+  data = importlib.resources.read_text("src", "data.json")
     
    # data =json.load(data_file)
   
@@ -105,7 +108,7 @@ def run(arg):
   
   # Fetch Data
  
-  preData = importlib.resources.read_text("buck", "data.json")
+  preData = importlib.resources.read_text("src", "data.json")
     
     
   

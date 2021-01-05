@@ -5,7 +5,7 @@ with open("README.md","r") as f:
 
 setup (
   name = 'buck',
-  version = '0.3.2',
+  version = '0.3.6',
   description = ' Get started with your projects faster .',
   
   long_description = README,
@@ -13,7 +13,7 @@ setup (
   url = 'https://github.com/Pleasant-tech/Buck/',
   keywords='productivity, setuptools, bucket, cli',
   #package_dir={'': 'src'},
-  package = find_packages(),
+  packages = find_packages(),
   include_package_data = True,
   package_data={  
    '': ['data.json'],
@@ -33,7 +33,7 @@ setup (
   ],
   entry_points = '''
     [console_scripts]
-    buck = buck.cli:main
+    buck = src.main:main
     
   ''',
   zip_safe=False,
