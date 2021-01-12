@@ -5,7 +5,7 @@ with open("README.md","r") as f:
 
 setup (
   name = 'buck',
-  version = '0.3.6',
+  version = '1.0.0',
   description = ' Get started with your projects faster .',
   
   long_description = README,

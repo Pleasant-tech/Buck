@@ -90,7 +90,7 @@ def listBucket():
 # Check if command is cd
 def is_cd(command: str) -> bool:
   command_split = shlex.split(command)
-  #return command_split[0] == "cd" 
+  return command_split[0] == "cd" 
   # this returns True if command is cd or False if not
   
   
