@@ -1,9 +1,7 @@
 import sys
 import json 
 import os
-import shlex
-import colorama
-
+import shlex 
 
 import importlib.resources
 
@@ -54,9 +52,11 @@ def createBucket():
   
    # Coverts object to Json 
   final = json.dumps(newData)
+  
   with importlib.resources.path("src","data.json") as haar_resource:
     file = os.path.abspath(haar_resource)
    # Write Json to a Json Data Fi
+  
   with open(file,"a") as f: 
     other= '\n'+final+', \n'
     f.write(other)
