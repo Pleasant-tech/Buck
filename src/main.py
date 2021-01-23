@@ -2,8 +2,12 @@ import sys
 import json 
 import os
 import shlex
+import colorama
+
 
 import importlib.resources
+
+
 
 # Creates the Bucket class 
 class Bucket: 
@@ -24,17 +28,17 @@ def createBucket():
   print(' >> Howdy! Create A New Bucket ')
   
   # Accept inputs from User
-  name = input("\n Name :")
+  name = input("\n Name : ")
   
-  print (' \n >>seperate commands with a comma')
+  print ('\n >> Seperate commands with a comma')
   preCmds = input (" Commands : ")
   
   cmds = preCmds.split(',')
-  executor = str(input("\n Executor: ")) 
+  executor = str(input("\n Executor : ")) 
 
       #print ("\n")
       #print(" >> uh oh, a bucket with the exeutor '"+ executor + "' already exists, try again with a different executor.
-  detail = str(input("""\n Description: """))
+  detail = str(input("""\n Description : """))
     
   # Instantiate an object of the class with data from input
   data = Bucket(name,executor,cmds,detail)
@@ -128,6 +132,7 @@ def run(arg):
     response = i.get('executor')
     
     
+    
     if arg[1] in response:
       
       buck = i.get('buck_list')
@@ -167,17 +172,31 @@ def run(arg):
           print('>> Done! executed 1 command.')
         else:
           print('>> Done! executed '+ str(len(buck)) + ' commands.')
-        
-    
-   # if arg[1] not in response:
-     # print('No bucket ' + arg[1])
-    
+          
+def eraseBucket():
+  ans = input('\n >> This would wipe out your bucket data ! ,should i proceed ? "y" or "n" : ' )
+  if ans == "y" or ans == "Y":
+    with importlib.resources.path("src","data.json") as haar_resource:
+      file = os.path.abspath(haar_resource)
+    # Write Json to a Json Data Fi
+    with open(file,"w") as f: 
+      f.write("")
+      f.close()
+    # Sucess Message
+    print('\n >> Your bucket is now empty.  ')
+    # End Process
+    sys.exit()
+  elif ans == "n" or ans == "N":
+    print("\n >> Process Terminated...")
+  else:
+    print("\n >> You did not enter a valid input, try again !")
+    sys.exit()
 # Main Function
 
   
 def main(arg=sys.argv):
   
-  args = ['--create','-c','--list','-l']
+  args = ['--create','-c','--list','-l','--erase','-e']
   if len(arg) == 1:
     print ('>> Please pass an argument in')
   elif arg[1] == '--create' or arg[1] == '-c':
@@ -186,8 +205,10 @@ def main(arg=sys.argv):
   elif arg[1] == '--list' or arg[1]=='-l':
     
     listBucket()
-  
+  elif arg[1] == '--erase' or arg[1]=='-e':
     
+    eraseBucket()
+  
  
   elif arg[1] not in args:
     run(arg)
