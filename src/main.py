@@ -5,8 +5,24 @@ import shlex
 
 import importlib.resources
 
+# WARNING !!! SPAGHETTI CODE !
 
-
+with importlib.resources.path("src","data.json") as haar_resource:
+    
+  file = os.path.abspath(haar_resource)
+  file = file[:-18]
+  file = file + "buck-data/"
+  
+  if os.path.isdir(file):
+    i = 0
+    
+  else:
+    os.mkdir(file)
+    data = file + "data.json"
+    f = open(data,"a+")
+    
+    
+  
 # Creates the Bucket class 
 class Bucket: 
   def __init__(self,name,executor,commandList,description):
@@ -54,7 +70,11 @@ def createBucket():
   final = json.dumps(newData)
   
   with importlib.resources.path("src","data.json") as haar_resource:
+    
     file = os.path.abspath(haar_resource)
+    file = file[:-18]
+    file = file + "buck-data/data.json"
+   
    # Write Json to a Json Data Fi
   
   with open(file,"a") as f: 
@@ -75,9 +95,16 @@ def listBucket():
   
    # Write Json to a Json Data File
  
-  
-  data = importlib.resources.read_text("src", "data.json")
+  with importlib.resources.path("src","data.json") as haar_resource:
     
+    file = os.path.abspath(haar_resource)
+    file = file[:-18]
+    file = file + "buck-data/data.json"
+   
+   
+  with open (file , 'r') as f:
+    data = f.read()
+    f.close()
    # data =json.load(data_file)
   
   # Modifies Data 
@@ -112,7 +139,15 @@ def run(arg):
   
   # Fetch Data
  
-  preData = importlib.resources.read_text("src", "data.json")
+  with importlib.resources.path('src','data.json') as haar_resource:
+    
+    file = os.path.abspath(haar_resource)
+    file = file[:-18]
+    file = file + "buck-data/data.json"
+  
+  with open (file,'r') as f:
+    preData = f.read()
+    f.close()
     
     
   
@@ -177,7 +212,11 @@ def eraseBucket():
   ans = input('\n >> This would wipe out your bucket data ! ,should i proceed ? "y" or "n" : ' )
   if ans == "y" or ans == "Y":
     with importlib.resources.path("src","data.json") as haar_resource:
+    
       file = os.path.abspath(haar_resource)
+      file = file[:-18]
+      file = file + "buck-data/data.json"
+   
     # Write Json to a Json Data Fi
     with open(file,"w") as f: 
       f.write("")

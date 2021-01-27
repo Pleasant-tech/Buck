@@ -5,7 +5,7 @@ with open("README.md","r") as f:
 
 setup (
   name = 'buck',
-  version = '1.2.0',
+  version = '1.5.0',
   description = ' Get started with your projects faster .',
   
   long_description = README,
@@ -15,11 +15,7 @@ setup (
   #package_dir={'': 'src'},
   packages = find_packages(),
   include_package_data = True,
-  package_data={  
-   '': ['data.json'],
-  },
-  
- data_files=[('my_data', ['data.json'])],
+ 
  
   license="MIT",
   classifiers =[
